@@ -1,6 +1,4 @@
-﻿using Udemy.SystemDesign.AbstractFactoryDesignPattern.Without;
-
-namespace Udemy.SystemDesign.AbstractFactoryDesignPattern.With
+﻿namespace Udemy.SystemDesign.AbstractFactoryDesignPattern.With
 {
     public class TextBoxFactory
     {

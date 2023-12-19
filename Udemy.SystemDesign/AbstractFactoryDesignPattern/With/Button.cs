@@ -1,6 +1,6 @@
-﻿namespace Udemy.SystemDesign.AbstractFactoryDesignPattern.Without
+﻿namespace Udemy.SystemDesign.AbstractFactoryDesignPattern.With
 {
-    public class Button(string color, bool border, OS style)
+    public class Button(string color, bool border, OS style) : IUIElement
     {
         public string GetColor
         {
@@ -29,6 +29,11 @@
         public void Click()
         {
             //Do something...
+        }
+
+        public void Render()
+        {
+            Console.WriteLine($"Rendering button with style " + style);
         }
     }
 }

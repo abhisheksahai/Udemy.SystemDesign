@@ -21,8 +21,4 @@
     <ProjectReference Include="..\Udemy.SystemDesign\Udemy.SystemDesign.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="AbstractFactoryDesignPattern\" />
-  </ItemGroup>
-
 </Project>

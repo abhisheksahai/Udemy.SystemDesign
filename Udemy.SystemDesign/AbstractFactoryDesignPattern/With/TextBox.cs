@@ -1,6 +1,6 @@
-﻿namespace Udemy.SystemDesign.AbstractFactoryDesignPattern.Without
+﻿namespace Udemy.SystemDesign.AbstractFactoryDesignPattern.With
 {
-    public class TextBox(string text, string color, OS style)
+    public class TextBox(string text, string color, OS style) : IUIElement
     {
         public string GetText
         {
@@ -24,6 +24,11 @@
             {
                 return style;
             }
+        }
+
+        public void Render()
+        {
+            Console.WriteLine($"Rendering text with style " + style);
         }
     }
 }
