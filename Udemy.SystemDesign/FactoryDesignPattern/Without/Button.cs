@@ -1,23 +1,12 @@
 ﻿namespace Udemy.SystemDesign.FactoryDesignPattern.Without
 {
-    public class Button
+    public class Button(string color, bool border, OS style)
     {
-        private string _color;
-        private bool _border;
-        private OS _style;
-
-        public Button(string color, bool border, OS style)
-        {
-            _color = color;
-            _border = border;
-            _style = style;
-        }
-
         public string GetColor
         {
             get
             {
-                return _color;
+                return color;
             }
         }
 
@@ -25,7 +14,7 @@
         {
             get
             {
-                return _border;
+                return border;
             }
         }
 
@@ -33,8 +22,13 @@
         {
             get
             {
-                return _style;
+                return style;
             }
+        }
+
+        public void Click()
+        {
+            //Do something...
         }
     }
 }

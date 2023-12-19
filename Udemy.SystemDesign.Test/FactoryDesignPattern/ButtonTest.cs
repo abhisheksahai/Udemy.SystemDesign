@@ -1,4 +1,5 @@
 ﻿using Udemy.SystemDesign.FactoryDesignPattern;
+using Udemy.SystemDesign.FactoryDesignPattern.With;
 using Udemy.SystemDesign.FactoryDesignPattern.Without;
 
 namespace Udemy.SystemDesign.Test.FactoryDesignPattern
@@ -9,28 +10,23 @@ namespace Udemy.SystemDesign.Test.FactoryDesignPattern
         public void WithoutFactoryButtonTest()
         {
             OS style = OS.Windows;
-            Button? button = null;
-            switch (style)
+            Button button = style switch
             {
-                case OS.Windows:
-                    button = new Button("Black", true, style);
-                    break;
-                case OS.Mac:
-                    button = new Button("White", false, style);
-                    break;
-                case OS.Linux:
-                    button = new Button("Green", true, style);
-                    break;
-                default:
-                    break;
-            }
-            Assert.IsNotNull(button);
+                OS.Windows => new Button("Black", true, style),
+                OS.Mac => new Button("White", false, style),
+                OS.Linux => new Button("Green", true, style),
+                _ => throw new NotImplementedException()
+            };
+            button.Click();
+            Assert.That(button, Is.Not.Null);
         }
 
         [Test]
         public void WithFactoryButtonTest()
         {
-
+            Button button = ButtonFactory.CreateButton(OS.Windows);
+            button.Click();
+            Assert.That(button, Is.Not.Null);
         }
     }
 }
