@@ -4,13 +4,13 @@ namespace Udemy.SystemDesign.AbstractFactoryDesignPattern.With
 {
     public class ButtonFactory
     {
-        public static Button CreateButton(OS style)
+        public static Button CreateButton(OS currentOs)
         {
-            Button button = style switch
+            Button button = currentOs switch
             {
-                OS.Windows => new Button("Black", true, style),
-                OS.Mac => new Button("White", false, style),
-                OS.Linux => new Button("Green", true, style),
+                OS.Windows => new Button("Black", true, currentOs),
+                OS.Mac => new Button("White", false, currentOs),
+                OS.Linux => new Button("Green", true, currentOs),
                 _ => throw new NotImplementedException()
             };
             return button;
