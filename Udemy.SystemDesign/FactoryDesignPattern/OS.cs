@@ -3,7 +3,7 @@
     public enum OS
     {
         Windows,
-        Max,
+        Mac,
         Linux
     }
 }
